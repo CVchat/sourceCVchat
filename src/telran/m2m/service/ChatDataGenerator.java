@@ -10,6 +10,7 @@ import org.springframework.integration.annotation.Poller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import telran.m2m.dto.MessageData;
 import telran.m2m.model.SourceSentences;
 
 
@@ -19,6 +20,16 @@ import telran.m2m.model.SourceSentences;
  */
 @EnableBinding(Source.class)
 public class ChatDataGenerator {
+
+	/**
+	 * Probability of critical message
+	 */
+	private static final double CRITICAL_PROBABILITY = 10;
+
+	/**
+	 * Critical message text
+	 */
+	private static final String CRITICAL_TEXT = "HELP!!! THAT IS CRITICAL ISSUE!!!";
 
 	/**
 	 * Object mapper to map the objects
@@ -42,9 +53,35 @@ public class ChatDataGenerator {
 							(fixedDelay="${fixedDelay:1000}"
 							, maxMessagesPerPoll="${nMessages:1}"))
 	String getChatData() throws JsonProcessingException {
-		SourceSentences sourceSentences = new SourceSentences();
-		return mapper.writeValueAsString(sourceSentences.sentence());
+		return mapper.writeValueAsString(getNewMessage());
 	}
 
+	/**
+	 * Generates new message
+	 * @return random message
+	 */
+	private MessageData getNewMessage() {
+		boolean critical = getRandomBooleanWithProbability(CRITICAL_PROBABILITY);
+		long timestamp=System.currentTimeMillis();
+		String text;
+		if (critical) {
+			text = CRITICAL_TEXT;
+		} else {
+			SourceSentences sourceSentences = new SourceSentences();
+			text = sourceSentences.sentence();
+		}
+		MessageData messageData = new MessageData(timestamp, text, critical);
+		System.out.println(messageData);
+		return  messageData;
+	}
 
+	/**
+	 * Creates random boolean with probability
+	 * @param probability of occurrence
+	 * @return if an event occurs
+	 */
+	private boolean getRandomBooleanWithProbability(double probability) {
+		Random random = new Random();
+		return random.nextFloat() < (probability / 100.0);
+	}
 }
