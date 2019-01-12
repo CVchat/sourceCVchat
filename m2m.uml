@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>telran.m2m</OriginalElement>
+  <nodes>
+    <node x="796.0" y="985.0">telran.m2m.DataGeneratorAppl</node>
+    <node x="569.0000000000001" y="13.5">telran.m2m.dto.Window</node>
+    <node x="577.5000000000001" y="823.0">telran.m2m.dto.RoomData</node>
+    <node x="0.0" y="985.0">telran.m2m.model.Person</node>
+    <node x="522.5000000000001" y="251.0">telran.m2m.dto.Room</node>
+    <node x="297.0000000000001" y="13.5">telran.m2m.dto.Cooler</node>
+    <node x="0.0" y="27.0">telran.m2m.dto.AirConditioner</node>
+    <node x="794.0000000000001" y="13.5">telran.m2m.dto.Heater</node>
+    <node x="1066.0" y="0.0">telran.m2m.dto.Light</node>
+    <node x="398.0" y="985.0">telran.m2m.model.Animal</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="telran.m2m.dto.Room" target="telran.m2m.dto.AirConditioner">
+      <point x="-104.30000000000007" y="-261.0" />
+      <point x="567.2" y="221.0" />
+      <point x="207.75" y="221.0" />
+      <point x="69.25" y="58.5" />
+    </edge>
+    <edge source="telran.m2m.dto.Room" target="telran.m2m.dto.Light">
+      <point x="104.29999999999995" y="-261.0" />
+      <point x="775.8000000000001" y="221.0" />
+      <point x="1129.0" y="221.0" />
+      <point x="-63.0" y="85.5" />
+    </edge>
+    <edge source="telran.m2m.dto.Room" target="telran.m2m.dto.Cooler">
+      <point x="-74.5" y="-261.0" />
+      <point x="597.0000000000001" y="211.0" />
+      <point x="360.0000000000001" y="211.0" />
+      <point x="-63.0" y="72.0" />
+    </edge>
+    <edge source="telran.m2m.dto.Room" target="telran.m2m.dto.Window">
+      <point x="-14.900000000000091" y="-261.0" />
+      <point x="656.6" y="191.0" />
+      <point x="620.2500000000001" y="191.0" />
+      <point x="-51.25" y="72.0" />
+    </edge>
+    <edge source="telran.m2m.dto.Room" target="telran.m2m.dto.Heater">
+      <point x="44.700000000000045" y="-261.0" />
+      <point x="716.2000000000002" y="201.0" />
+      <point x="857.0000000000001" y="201.0" />
+      <point x="-63.0" y="72.0" />
+    </edge>
+    <edge source="telran.m2m.dto.RoomData" target="telran.m2m.dto.Room">
+      <point x="47.0" y="-58.5" />
+      <point x="718.5000000000001" y="798.0" />
+      <point x="746.0000000000001" y="798.0" />
+      <point x="74.5" y="261.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9587443946188339" x="904.1659954076624" y="496.98099951237276" />
+  <SelectedNodes>
+    <node>telran.m2m.DataGeneratorAppl</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
