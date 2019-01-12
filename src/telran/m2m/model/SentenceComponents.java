@@ -28,7 +28,7 @@ public class SentenceComponents {
     }
 
     public static String adjective() {
-        String[] items = { "big", "tiny", "scary", "meddling", "hungry" };
+        String[] items = { "big", "tiny", "scary", "meddling", "hungry", "critical" };
         return getRandomString(items);
     }
 
